@@ -1,33 +1,57 @@
 // GIVEN a weather dashboard with form inputs
+var weather;
+
+var api = 'https://api.openweathermap.org/data/2.5/weather?q='
+var apiKey = 'appid=aefb5a0c0b478f7f82221b45c7eddcc8'
+var units = '&units=imperial'
+
+var input;
+
+function setup() { 
+var button = select('#submit');
+button.onclick(weatherSearch);
+
+input = select('#city');
+}
+
+function weatherSearch() {
+  var url = api + input.value() + apiKey + units;
+  loadJSON(url, gotData);
+}
+
+function gotData(data) {
+  weather = data;
+}
+
 
 function revealMessage() {
     document.getElementById("hiddenMessage").style.display = "block";
 }
 
-console.log(fetch('https://api.openweathermap.org/data/2.5/weather?q=Charlotte&appid=aefb5a0c0b478f7f82221b45c7eddcc8'))
 
-// $(document).ready(function() {
+
+// $(document).ready(function() {}
 // // WHEN I search for a city THEN I am presented with current and future conditions for that city and that city is added to the search history   
 //     // what happens when i press the button? 
-let weather = {
-    // apiKey = 'aefb5a0c0b478f7f82221b45c7eddcc8',
-    fetchWeather: function () {
-        fetch(
-            "https://api.openweathermap.org/data/2.5/weather?q=" +
-              city +
-              "&units=metric&appid=" +
-              this.apiKey
-          )
-            .then((response) => {
-              if (!response.ok) {
-                alert("No weather found.");
-                throw new Error("No weather found.");
-              }
-              return response.json();
-            })
-            .then((data) => this.displayWeather(data));
-    }
-}
+// let weather = {
+//     // apiKey = 'aefb5a0c0b478f7f82221b45c7eddcc8',
+//     fetchWeather: function () {
+//         fetch(
+//             "https://api.openweathermap.org/data/2.5/weather?q=" +
+//               city +
+//               "&units=metric&appid=" +
+//               this.apiKey
+//           )
+//             .then((response) => {
+//               if (!response.ok) {
+//                 alert("No weather found.");
+//                 throw new Error("No weather found.");
+//               }
+//               return response.json();
+//             })
+//             .then((data) => this.displayWeather(data));
+//     }
+// }
 
 
 
