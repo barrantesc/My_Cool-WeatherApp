@@ -19,18 +19,20 @@
         <div class="citysearch">
             <h2 id="city">Search for a City</h2>
             <input type="text">
-            <button>Search</button>
+            <button class="seachButton" onclick="revealMessage()">Search</button>
         </div>
         <!-- Date and Time Section -->
         <div class="date-time">
-            <h2 class="time">03:41PM</h2>
+            <h2 class="time">03:41<span id="am-pm">PM</span> </h2>
             <h2 class="date">Saturday, December 11th</h2>
         </div>
     </div>
     <!-- List of previous Cities selected -->
     <div></div>
     <!-- Current Weather Section -->
-    <!-- <div class="today">
+    
+    <div id="hiddenMessage" style="display:none">
+    <div class="today">
         <h3>Current Weather</h3>
         <div>
             <p class="city"> City Name </p>
@@ -43,7 +45,7 @@
             <p class="item"> Wind Speed </p>
             <p class="item"> UV Index </p>
         </div>
-    </div> -->
+    </div>
     <!-- Future 5 day forecast -->
     <div class="future-weather-forecast" id="future-weather-forecast">
         <div class="future-weather">
@@ -82,7 +84,13 @@
             <p class="item"> Wind Speed: </p>
         </div>
     </div>
+</div>
 
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+    <script src="./Asset/JS/api.js"></script>
     <script src="./Asset/JS/script.js"></script>
 </body>
 </html>

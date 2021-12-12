@@ -14,7 +14,7 @@ body {
     background-size: cover;
     overflow: hidden;
     height: 100vh;
-    font-family: 'Playfair Display' sans-serif, Arial;
+    font-family: 'Playfair Display', sans-serif, Arial;
 }
 
 .container{
@@ -48,6 +48,11 @@ body {
     font-size: 60px;
 }
 
+.date-time #am-pm{
+    font-size: 30px;
+    margin-left: 20px;
+}
+
 .date-time .date{
     font-size: 20px;
 }
@@ -57,7 +62,7 @@ body {
 
 
 /* Style for current weather forecast */
-/* .today {
+.today {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,7 +72,7 @@ body {
     padding-right: 40px;
     border-radius: 10px;
     background: rgba(0,0,0,0.2)
-} */
+}
     /* city name */
     /* date */
     /* weather icon */
