@@ -1,21 +1,116 @@
 /* Style for whole page */
-/* Style for City Search Section */
-    /* Move to the left of the page */
-    /* search for city title */
-    /* search input style */
-    /* search button*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Playfair+Display:ital@1&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url('../Img/littlerocks.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+    font-family: 'Playfair Display' sans-serif, Arial;
+}
+
+.container{
+    padding: 20px 70px;
+    color:#fff;
+}
+
+#current-info{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Style for City Search Section */  
+.citysearch {
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.citysearch #city {
+    font-size: 30px;
+    font-weight: 700;
+}
+
 /* Style for Date and Time */
-    /* Move to the right */
-    /* date */
-    /* time */
+.date-time{
+    text-align: end;
+    font-weight: 100;
+}
+.date-time .time{
+    font-size: 60px;
+}
+
+.date-time .date{
+    font-size: 20px;
+}
+
+
 /* Style for City list */
-    /* appear in a box*/
+
+
 /* Style for current weather forecast */
+/* .today {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding:15px;
+    padding-right: 40px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.2)
+} */
     /* city name */
     /* date */
     /* weather icon */
     /* temp, humidity, wind speed, iv index */
     /* uv index color box */
+
 /* style for 5 day forecast */
+.future-weather-forecast {
+    display: flex;
+    background: rgba(24,24,27,0.8);
+    padding: 25px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    color:white;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    }
+
     /* Put each date in separate box */
-    /* date, icon, temp, wind speed, humidity */
+.future-weather-forecast .future-weather{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.2)
+    }
+    
+    /* date */
+.future-weather-forecast .future-weather .day{
+    padding: 5px 15px;
+    background: #3C3C44;
+    border-radius: 50px;
+    text-align: center;
+    }
+    /* icon, temp, wind speed, humidity */
+.future-weather-forecast .future-weather .item{
+    font-weight: 100;
+    font-size: 12px;
+    }
