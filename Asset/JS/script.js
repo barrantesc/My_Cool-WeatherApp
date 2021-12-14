@@ -2,56 +2,71 @@
 var weather;
 
 var api = 'https://api.openweathermap.org/data/2.5/weather?q='
-var apiKey = 'appid=aefb5a0c0b478f7f82221b45c7eddcc8'
+var apiKey = 'aefb5a0c0b478f7f82221b45c7eddcc8'
 var units = '&units=imperial'
 
-var input;
+$(document).ready(function() {
+  $("#submit").click(weatherSearch);
 
-function setup() { 
-var button = select('#submit');
-button.onclick(weatherSearch);
+  function weatherSearch() {
+    var searchFieldInput = $("#searchField").val()
+            fetch(
+            "https://api.openweathermap.org/data/2.5/weather?q=" +
+            searchFieldInput +
+              "&units=metric&appid=" +
+              apiKey
+          )
+            .then((response) => {
+              if (!response.ok) {
+                alert("No weather found.");
+                throw new Error("No weather found.");
+              }
+              return response.json();
+              console.log(response)
+            })
+            .then((data) => this.displayWeather(data));
+            console.log(data);
+    }
 
-input = select('#city');
-}
-
-function weatherSearch() {
-  var url = api + input.value() + apiKey + units;
-  loadJSON(url, gotData);
-}
-
-function gotData(data) {
-  weather = data;
-}
+    
+  function displayWeather(data) {
+    for (var i = 0; i < data.length; i++) {
+      var 
+    }
+    
+  }
 
 
-function revealMessage() {
-    document.getElementById("hiddenMessage").style.display = "block";
-}
+});
+
+// var input;
+
+// function setup() { 
+// var button = select('#submit');
+// button.onclick(weatherSearch);
+
+// input = select('#city');
+// }
+
+// function weatherSearch() {
+//   var url = api + input.value() + apiKey + units;
+//   loadJSON(url, gotData);
+// }
+
+// function gotData(data) {
+//   weather = data;
+// }
+
+
+// function revealMessage() {
+//     document.getElementById("hiddenMessage").style.display = "block";
+// }
 
 
 
-// $(document).ready(function() {}
 // // WHEN I search for a city THEN I am presented with current and future conditions for that city and that city is added to the search history   
 //     // what happens when i press the button? 
-// let weather = {
-//     // apiKey = 'aefb5a0c0b478f7f82221b45c7eddcc8',
-//     fetchWeather: function () {
-//         fetch(
-//             "https://api.openweathermap.org/data/2.5/weather?q=" +
-//               city +
-//               "&units=metric&appid=" +
-//               this.apiKey
-//           )
-//             .then((response) => {
-//               if (!response.ok) {
-//                 alert("No weather found.");
-//                 throw new Error("No weather found.");
-//               }
-//               return response.json();
-//             })
-//             .then((data) => this.displayWeather(data));
-//     }
-// }
+
 
 
 
