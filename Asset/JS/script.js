@@ -36,7 +36,7 @@ function citySearchHistory (cityName) {
 function cityHistory () {
   var loadPreviousSearches = JSON.parse(localStorage.getItem("searches")) || [];
   for (var i = 0; i < loadPreviousSearches.length ; i++) {
-    $("<li>").text(loadPreviousSearches[i].city).appendTo($("#previous-searches")).addClass("search-item");
+    $("<li>").text(loadPreviousSearches[i].city).appendTo($("#previous-searches")).addClass("citySearch");
 }
 };
 
@@ -53,10 +53,6 @@ $("#previous-searches").click(function(event) {
       var button = select('#submit');
       button.onclick(weatherSearch);
       input = select('#city');
-      // click button gives city name
-      // put  city name inside city search history function and save inside localstorage
-      // add current city to history
-      // call city history function 
       console.log(city)
     }
     
