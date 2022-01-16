@@ -25,21 +25,26 @@
         </div>
         <!-- Date and Time Section -->
         <div class="date-time">
-            <h2 class="time">03:41<span id="am-pm">PM</span> </h2>
-            <h2 class="date">Saturday, December 11th</h2>
+            <h2 id="currentTime" class="time">03:41<span id="am-pm">PM</span> </h2>
+            <h2 id="currentDay" class="date">Saturday, December 11th</h2>
         </div>
     </div>
     <!-- List of previous Cities selected -->
-    <div></div>
+    <section class="history" id="history">
+        <div >
+            <h4>Search History:</h4>
+            <ul id="previous-searches">
+            </ul>
+        </div>
+    </section>
     <!-- Current Weather Section -->
     
     <div id="hiddenMessage" style="display:none">
     <div class="today">
-        <h3>Current Weather</h3>
+        <!-- <h3>Current Weather</h3> -->
         <div>
             <p id="currentCity"
             class="city"> City Name </p>
-            <p class="day"> Date </p>
         </div>
         <div class="other">
             <img src="" id="weatherIcon" alt="Current Weather Icon">
@@ -52,36 +57,36 @@
     <!-- Future 5 day forecast -->
     <div class="future-weather-forecast" id="future-weather-forecast">
         <div class="future-weather">
-            <p class="day"> Sun, Dec 12th </p>
-            <img src="" alt="Tomorrow's Weather Icon">
+            <p id="day-1" class="day"> Sun, Dec 12th </p>
+            <img id="weatherIcon-1" src="" alt="Tomorrow's Weather Icon">
             <p id="temp-1" class="item"> Temp: </p>
             <p id="humidity-1" class="item"> Humidity: </p>
             <p id="windSpeed-1" class="item"> Wind Speed: </p>
         </div>
         <div class="future-weather">
-            <p class="day"> Mon, Dec 13th  </p>
-            <img src="" alt="Tomorrow's Weather Icon">
+            <p id="day-2" class="day"> Mon, Dec 13th  </p>
+            <img id="weatherIcon-2" src="" alt="Tomorrow's Weather Icon">
             <p id="temp-2" class="item"> Temp: </p>
             <p id="humidity-2" class="item"> Humidity: </p>
             <p id="windSpeed-2" class="item"> Wind Speed: </p>
         </div>
         <div class="future-weather">
-            <p class="day"> Tue, Dec 14th </p>
-            <img src="" alt="Tomorrow's Weather Icon">
+            <p id="day-3" class="day"> Tue, Dec 14th </p>
+            <img id="weatherIcon-3" src="" alt="Tomorrow's Weather Icon">
             <p id="temp-3" class="item"> Temp: </p>
             <p id="humidity-3" class="item"> Humidity: </p>
             <p id="windSpeed-3" class="item"> Wind Speed: </p>
         </div>
         <div class="future-weather">
-            <p class="day">  Wed, Dec 15 </p>
-            <img src="" alt="Tomorrow's Weather Icon">
+            <p id="day-4" class="day">  Wed, Dec 15 </p>
+            <img id="weatherIcon-4" src="" alt="Tomorrow's Weather Icon">
             <p id="temp-4" class="item"> Temp: </p>
             <p id="humidity-4" class="item"> Humidity: </p>
             <p id="windSpeed-4" class="item"> Wind Speed: </p>
         </div>
         <div class="future-weather">
-            <p class="day"> Thu, Dec 16 </p>
-            <img src="" alt="Tomorrow's Weather Icon">
+            <p id="day-5" class="day"> Thu, Dec 16 </p>
+            <img id="weatherIcon-5" src="" alt="Tomorrow's Weather Icon">
             <p id="temp-5" class="item"> Temp: </p>
             <p id="humidity-5" class="item"> Humidity: </p>
             <p id="windSpeed-5" class="item"> Wind Speed: </p>
@@ -89,6 +94,7 @@
     </div>
 </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script
   src="https://code.jquery.com/jquery-3.6.0.js"
   integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="

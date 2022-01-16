@@ -17,12 +17,12 @@ body {
     font-family: 'Playfair Display', sans-serif, Arial;
 }
 
-.container{
+.container {
     padding: 20px 70px;
     color:#fff;
 }
 
-#current-info{
+#current-info, .history {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -63,7 +63,7 @@ body {
 
 /* Style for current weather forecast */
 .today {
-    display: flex;
+    display: inline-block;
     align-items: center;
     justify-content: center;
     border: 1px solid #eee;
@@ -73,11 +73,39 @@ body {
     border-radius: 10px;
     background: rgba(0,0,0,0.2)
 }
-    /* city name */
-    /* date */
-    /* weather icon */
-    /* temp, humidity, wind speed, iv index */
-    /* uv index color box */
+
+.history {
+    display: inline-block;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding:15px;
+    padding-right: 40px;
+    border-radius: 10px;
+    
+}
+
+/* search history style */
+#previous-searches {
+    margin: 0;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#previous-searches li {
+    list-style-type: none;
+    background-color: #5755D9;
+    border: .05rem solid #5755d9;
+    border-radius: 0.1rem;
+    padding: 10px 10px;
+    margin: 5px;
+    color: white;
+}
+#previous-searches li:hover {
+    background: #4240d4;
+    border-color: #3634d2;
+    color: #fff;
+}
 
 /* style for 5 day forecast */
 .future-weather-forecast {
@@ -119,3 +147,16 @@ body {
     font-weight: 100;
     font-size: 12px;
     }
+
+
+.uvIndex-green {
+    background-color: green
+}
+
+.uvIndex-yellow {
+    background-color: yellow
+}
+
+.uvIndex-red {
+    background-color:red
+}
