@@ -34,7 +34,7 @@ function citySearchHistory (cityName) {
 
 // getting city name from local storage and creating history button
 function cityHistory () {
-  var loadPreviousSearches = JSON.parse(localStorage.getItem("searches")) || [];
+  var loadPreviousSearches = JSON.parse(localStorage.getItem("citySearch")) || [];
   for (var i = 0; i < loadPreviousSearches.length ; i++) {
     $("<li>").text(loadPreviousSearches[i].city).appendTo($("#previous-searches")).addClass("citySearch");
 }
