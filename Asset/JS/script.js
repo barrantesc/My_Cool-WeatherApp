@@ -114,8 +114,6 @@ $("#previous-searches").click(function(event) {
             throw new Error("No weather found.");
           } 
           return response.json();
-
-          
         })
         .then((data) => {
           console.log("response here", data);
