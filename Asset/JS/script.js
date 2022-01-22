@@ -18,7 +18,7 @@ $(document).ready(function() {
   $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"));
   $("#currentTime").text(moment().format(" h:mm a"));
   $("#submit").click(weatherSearch);
-
+  cityHistory();
   // $("#day-1").text.moment().add(1, 'days').calendar();
 
   // function revealMessage() {
@@ -26,17 +26,22 @@ $(document).ready(function() {
   // }
 
   // storing city name in local storage
-function citySearchHistory (cityName) {
+function addCitySearchHistory (cityName) {
   //add city name inside local storage
-  citySearchHistory.push(cityName);
-  localStorage.setItem("citySearch", JSON.stringify(citySearchHistory));
-}
+  var loadPreviousSearches = JSON.parse(localStorage.getItem("citySearch")) || [];
+  if (loadPreviousSearches.indexOf(cityName) === -1) 
+  {
+    loadPreviousSearches.push(cityName);
+    localStorage.setItem("citySearch", JSON.stringify(loadPreviousSearches.slice(-4)));
+  } 
+};
 
 // getting city name from local storage and creating history button
 function cityHistory () {
   var loadPreviousSearches = JSON.parse(localStorage.getItem("citySearch")) || [];
+  $("#previous-searches").empty();
   for (var i = 0; i < loadPreviousSearches.length ; i++) {
-    $("<li>").text(loadPreviousSearches[i].city).appendTo($("#previous-searches")).addClass("citySearch");
+    $("<li>").text(loadPreviousSearches[i]).appendTo($("#previous-searches")).addClass("citySearch");
 }
 };
 
@@ -44,7 +49,8 @@ function cityHistory () {
 $("#previous-searches").click(function(event) {
   var clickedSearchTerm = event.target;
   var citySearchTerm = clickedSearchTerm.textContent;
-  getCity(citySearchTerm);
+  $("#searchField").val(citySearchTerm);
+  weatherSearch();
 });
 
   // function to display data on click
@@ -90,8 +96,9 @@ $("#previous-searches").click(function(event) {
               currentHumidity.textContent = `Humidity: ${data.main.humidity}`;
               currentWindSpeed.textContent = `Wind speed: ${data.wind.speed}`;
               
-              
-              displayWeather(data) 
+              addCitySearchHistory(data.name);
+              displayWeather(data);
+              cityHistory(); 
               fetch5Days (lat, lon);
             });
             
@@ -142,9 +149,7 @@ $("#previous-searches").click(function(event) {
 
 // GIVEN a weather dashboard with form inputs
 // WHEN I search for a city. THEN I am presented with current and future conditions for that city and that city is added to the search history
-
 // WHEN I view current weather conditions for that city. THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
 // WHEN I view the UV index. THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
 // WHEN I view future weather conditions for that city. THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity
-
 // WHEN I click on a city in the search history. THEN I am again presented with current and future conditions for that city
