@@ -13,7 +13,7 @@ A web application that allows user to search for a city to obtain current and fi
 ## Website
 [View Application](https://barrantesc.github.io/My_Cool-WeatherApp/)
 
-[View Github](https://github.com/barrantesc/My_Cool-WeatherApp)
+![Image of mockup](Asset/Img/Mockup.png)
 
 
 ## Contribution
